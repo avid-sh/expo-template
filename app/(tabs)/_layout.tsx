@@ -1,7 +1,11 @@
+/* eslint-disable react/no-unstable-nested-components */
+// The above ESLint rule is disabled here because usages in <Tabs.Screen /> are
+// in the form of _functions returning React Elements_, rather than _Components_.
+
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { Link, Tabs } from "expo-router";
 import React from "react";
-import { Pressable } from "react-native";
+import { Pressable, StyleSheet } from "react-native";
 
 import { useClientOnlyValue } from "@/components/useClientOnlyValue";
 import { useColorScheme } from "@/components/useColorScheme";
@@ -12,7 +16,7 @@ function TabBarIcon(props: {
   name: React.ComponentProps<typeof FontAwesome>["name"];
   color: string;
 }) {
-  return <FontAwesome size={28} style={{ marginBottom: -3 }} {...props} />;
+  return <FontAwesome size={28} style={styles.tabBarIcon} {...props} />;
 }
 
 export default function TabLayout() {
@@ -40,7 +44,10 @@ export default function TabLayout() {
                     name="info-circle"
                     size={25}
                     color={Colors[colorScheme ?? "light"].text}
-                    style={{ marginRight: 15, opacity: pressed ? 0.5 : 1 }}
+                    style={[
+                      styles.headerInfoIcon,
+                      { opacity: pressed ? 0.5 : 1 },
+                    ]}
                   />
                 )}
               </Pressable>
@@ -58,3 +65,12 @@ export default function TabLayout() {
     </Tabs>
   );
 }
+
+const styles = StyleSheet.create({
+  headerInfoIcon: {
+    marginRight: 15,
+  },
+  tabBarIcon: {
+    marginBottom: -3,
+  },
+});
