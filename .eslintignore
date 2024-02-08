@@ -2,3 +2,6 @@
 .expo/
 dist/
 web-build/
+ios/
+android/
+expo-env.d.ts

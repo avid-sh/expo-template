@@ -10,14 +10,14 @@
   "main": "expo-router/entry",
   "scripts": {
     "start": "expo start",
-    "android": "expo start --android",
-    "ios": "expo start --ios",
+    "android": "npx expo prebuild --clean && expo run:android",
+    "ios": "npx expo prebuild --clean && expo run:ios",
     "web": "expo start --web",
 
-    "check": "npm run tsc && npm run format && npm run lint",
+    "check": "npm run fmt && npm run tsc && npm run lint",
+    "fmt": "prettier . --check",
     "tsc": "tsc --project .",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "format": "prettier . --check",
     "test": "jest --watchAll"
   },
   "jest": {
@@ -27,6 +27,7 @@
     "@expo/vector-icons": "^14.0.0",
     "@react-navigation/native": "^6.0.2",
     "expo": "~50.0.6",
+    "expo-dev-client": "~3.3.8",
     "expo-font": "~11.10.2",
     "expo-linking": "~6.2.2",
     "expo-router": "~3.4.7",

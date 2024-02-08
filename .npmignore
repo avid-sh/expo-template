@@ -5,6 +5,9 @@ package-lock.json
 .expo/
 dist/
 web-build/
+ios/
+android/
+expo-env.d.ts
 
 # local env files
 .env*.local
