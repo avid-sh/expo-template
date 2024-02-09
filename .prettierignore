@@ -1,6 +1,3 @@
 package.json
 package-lock.json
 expo-env.d.ts
-assets/
-ios/
-android/
