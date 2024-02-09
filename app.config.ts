@@ -2,8 +2,12 @@ import { ConfigContext, ExpoConfig } from "expo/config";
 
 export default ({ config }: ConfigContext): ExpoConfig => ({
   ...config,
-  name: "expo-template",
-  slug: "expo-template",
+
+  // TODO: copy over the `name` and `slug` from `app.json`, and remove that file
+  // afterwards.
+  name: config.name!,
+  slug: config.slug!,
+
   version: "1.0.0",
   orientation: "portrait",
   icon: "./assets/images/icon.png",
