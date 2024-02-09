@@ -1,3 +1,4 @@
+import * as Application from "expo-application";
 import React from "react";
 import { StyleSheet } from "react-native";
 
@@ -46,6 +47,11 @@ export default function EditScreenInfo({ path }: { path: string }) {
             changes
           </Text>
         </ExternalLink>
+
+        <Text lightColor="rgba(0,0,0,0.8)" darkColor="rgba(255,255,255,0.8)">
+          v{Application.nativeApplicationVersion} (build{" "}
+          {Application.nativeBuildVersion})
+        </Text>
       </View>
     </View>
   );
