@@ -1,6 +1,6 @@
 {
   "name": "@highgrnds/expo-template",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Customised starter template for new Expo RN projects.",
   "repository": {
     "type": "git",
