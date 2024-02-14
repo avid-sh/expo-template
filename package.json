@@ -10,9 +10,10 @@
   "scripts": {
     "prepare": "husky",
     "start": "expo start",
-    "android": "npx expo prebuild --clean && expo run:android",
-    "ios": "npx expo prebuild --clean && expo run:ios",
+    "android": "npx expo prebuild --clean -p android && expo run:android",
+    "ios": "npx expo prebuild --clean -p ios && expo run:ios",
     "web": "expo start --web",
+
     "check": "npm run fmt && npm run tsc && npm run lint",
     "fmt": "prettier . --check",
     "tsc": "tsc --project .",
